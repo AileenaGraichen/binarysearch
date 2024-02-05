@@ -1,6 +1,6 @@
 "use strict";
 
-const values = [3, 11, 1, 2, 7, 10].sort((a, b) => a - b); // Sørg for at arrayet er sorteret
+const values = [3, 11, 1, 4, 7, 10].sort((a, b) => a - b); // Sorts array
 
 function binarySearch(value, values) {
     let start = 0;
@@ -10,7 +10,7 @@ function binarySearch(value, values) {
         let middle = Math.floor((start + end) / 2);
 
         if (values[middle] === value) {
-            return middle; // Værdien fundet
+            return middle; // Value found
         } else if (value < values[middle]) {
             end = middle - 1;
         } else {
@@ -18,9 +18,9 @@ function binarySearch(value, values) {
         }
     }
 
-    return -1; // Værdien ikke fundet
+    return -1; // value not found
 }
 
-// Eksempler på brug:
-console.log(binarySearch(7, values)); // Finder indexet for 7 i arrayet
-console.log(binarySearch(5, values)); // Returnerer -1, da 5 ikke findes i arrayet
+// Examples
+console.log(binarySearch(10, values)); // Finds the index of 7 in the array
+console.log(binarySearch(3, values)); // returns -1 as 5 is not in the array
